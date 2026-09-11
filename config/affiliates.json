@@ -2,7 +2,7 @@
   "cloud_deploy": {
     "runpod": {
       "name": "RunPod (GPU)",
-      "url_template": "https://runpod.io?ref=YOUR_REF_ID",
+      "url_template": "https://runpod.io?ref=0buvdumi",
       "badge": "GPU Cloud"
     },
     "railway": {
