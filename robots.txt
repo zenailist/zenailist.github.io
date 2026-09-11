@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zenailist.github.io/sitemap.xml
