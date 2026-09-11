@@ -2,8 +2,8 @@ name: Update AI Repo Rankings
 
 on:
   schedule:
-    # Run every 6 hours
-    - cron: '0 */6 * * *'
+    # Cập nhật mỗi 1 giờ
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -20,6 +20,10 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          
+      - name: Install Dependencies
+        run: |
+          pip install requests
 
       - name: Fetch and Process Trending AI Repos
         run: |
@@ -29,6 +33,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/repos.json data/summary.json
+          git add data/
           git commit -m "chore: auto-update AI ranking datasets [skip ci]" || exit 0
           git push
